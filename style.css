@@ -22,6 +22,7 @@ header {
 }
 
 .logo-container p {
+  margin: 0 1.5rem;
   font-family: 'Italiana', serif;
   text-align: center;
   font-size: 1.5rem;
@@ -32,6 +33,9 @@ header {
 nav a {
   font-family: 'Inika', serif;
   text-decoration: none;
+}
+nav a {
+  margin: 0 1.5rem;
 }
 
 /* --------------- MAIN -------------------*/
@@ -47,6 +51,10 @@ main {
 }
 
 /* --------------- ASIDE -------------------*/
+aside {
+  padding: 1.5rem;
+}
+
 .cover-container > img {
   width: 150px;
 }
@@ -59,13 +67,21 @@ main {
   margin-bottom: 2rem;
 }
 /* --------------- CONTENT -------------------*/
+.main-container > article {
+  padding: 1.5rem;
+}
+
 .tracks-container li {
   list-style-type: none;
-  margin: 2rem;
+  margin: 2rem 0;
 }
 
 .track audio {
   width: 100%;
+}
+
+.biography-container p {
+  padding: 1.5rem 0;
 }
 
 /* --------------- FOOTER -------------------*/
@@ -84,6 +100,7 @@ footer {
 }
 
 .copyright {
+  margin: 0 1.5rem;
   font-family: 'Inika', serif;
 }
 
@@ -94,4 +111,8 @@ footer ul {
 footer ul li {
   list-style-type: none;
   margin: 0 8px;
+}
+
+footer ul li:last-of-type {
+  margin-right: 1.5rem;
 }

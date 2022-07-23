@@ -14,6 +14,11 @@ bioButton.addEventListener('click', (e)=> {
 })
 
 playBtn.addEventListener('click', () => {
+  if(playBtn.className.includes('pause')){
+    music.play();
+  } else {
+    music.pause();
+  }
   playBtn.classList.toggle('pause');
 })
 
@@ -35,5 +40,14 @@ let formatTime = (time) => {
   }
   return `${min}:${sec}`
 }
+
+setInterval(() => {
+  seekBar.value = music.currentTime;
+  currentTime.innerHTML = formatTime(music.currentTime)
+}, 500)
+
+seekBar.addEventListener('change', ()=> {
+  music.currentTime = seekBar.value;
+})
 
 setMusic()

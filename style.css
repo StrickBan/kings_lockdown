@@ -41,6 +41,7 @@ nav a {
 /* --------------- MAIN -------------------*/
 main {
   background-color: #1a1a1a;
+  padding-top: 1.5rem;
 }
 
 .main-container{
@@ -55,17 +56,64 @@ aside {
   padding: 1.5rem;
 }
 
+.cover-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
 .cover-container > img {
-  width: 150px;
+  width: 250px;
+  box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cover-container button {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  background-color: rgb(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.fa-play {
+  font-size: 3rem;
+  color: rgb(255, 255, 255, 0.5);
+  padding-left: 8px;
+}
+
+.title-container h1 {
+  margin-top: 2rem;
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+.title-container p {
+  margin-top: 0.8rem;
+  font-family: 'Inika', serif;
+  font-size: 0.8rem;
+}
+
+.credits-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.credits-container h3 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
 .credit-group {
   margin-top: 1rem;
 }
 
-.credits-container {
-  margin-bottom: 2rem;
-}
 /* --------------- CONTENT -------------------*/
 .main-container > article {
   padding: 1.5rem;
@@ -73,15 +121,39 @@ aside {
 
 .tracks-container li {
   list-style-type: none;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+}
+
+.tracks-container hr {
+  margin-top: 1.5rem;
+  border: solid #111111 2px;
 }
 
 .track audio {
   width: 100%;
+  height: 40px;
+}
+
+.track h2 {
+  font-weight: 100;
+}
+
+.biography-container {
+  margin-top: 3rem;
+}
+
+.biography-container h3 {
+  text-transform: uppercase;
+  font-weight: 100;
+  font-size: 1.2rem;
 }
 
 .biography-container p {
   padding: 1.5rem 0;
+}
+
+hr {
+  border-color: #c4c4c4;
 }
 
 /* --------------- FOOTER -------------------*/

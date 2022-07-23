@@ -83,6 +83,12 @@ aside {
   border: none;
   background-color: rgb(0, 0, 0, 0.5);
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cover-container button:hover {
+  height: 110px;
+  width: 110px;
 }
 
 .fa-play {

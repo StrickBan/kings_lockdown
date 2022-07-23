@@ -2,12 +2,70 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #c4c4c4;
 }
 
+/* --------------- HEADER -------------------*/
+header {
+  width: 100%;
+  background-color: #111111;
+}
+
+.header-container {
+  width: 1000px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --------------- MAIN -------------------*/
+main {
+  background-color: #1a1a1a;
+}
+
+.main-container{
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  width: 1000px;
+}
+
+/* --------------- ASIDE -------------------*/
 .cover-container > img {
   width: 150px;
 }
 
 .credit-group {
   margin-top: 1rem;
+}
+
+.credits-container {
+  margin-bottom: 2rem;
+}
+/* --------------- CONTENT -------------------*/
+
+/* --------------- FOOTER -------------------*/
+footer {
+  width: 100%;
+  background-color: #111111;
+}
+
+.footer-container {
+  width: 1000px;
+  height: 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer ul {
+  display: flex;
+}
+
+footer ul li {
+  list-style-type: none;
+  margin: 0 8px;
 }

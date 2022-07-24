@@ -45,6 +45,14 @@ for (let i=0; i<music.length; i++) {
   setInterval(() => {
     seekBar[i].value = music[i].currentTime;
     currentTime[i].innerHTML = formatTime(music[i].currentTime)
+    if(music[i].currentTime >= music[i].duration && (i+1) == music.length){
+      music[i].currentTime = 0;
+      playBtn[i].classList.toggle('pause');
+    } else if (music[i].currentTime >= music[i].duration){
+      music[i].currentTime = 0;
+      playBtn[i].classList.toggle('pause');
+      playBtn[i+1].click()
+    }
   }, 500)
 
   seekBar[i].addEventListener('change', ()=> {

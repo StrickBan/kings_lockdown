@@ -150,7 +150,7 @@ aside {
   top: 50%;
   left: 25%;
   transform: translateY(-50%);
-  width: 8px;
+  width: 6px;
   height: 24px;
   border-radius: 2px;
   background: #111111;
@@ -208,7 +208,6 @@ aside {
   padding: 1.5rem;
 }
 
-
 .tracks-container li {
   list-style-type: none;
   margin: 1.5rem 0;
@@ -263,6 +262,10 @@ aside {
 
 hr {
   border-color: #c4c4c4;
+}
+
+.credits-below {
+  display: none;
 }
 
 /* --------------- FOOTER -------------------*/

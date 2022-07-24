@@ -7,6 +7,7 @@ let currentTime = document.querySelectorAll('.current-time');
 let musicDuration = document.querySelectorAll('.song-duration');
 let playBtn = document.querySelectorAll('.play-btn');
 const playBtnCover = document.querySelector('.play-btn-cover')
+const creditsAside = document.querySelector('.credits-container')
 
 bioButton.addEventListener('click', (e)=> {
   e.preventDefault();
@@ -87,3 +88,7 @@ playBtnCover.addEventListener('click', ()=> {
   resetTracks();
   playBtn[0].click();
 })
+
+// if(window.innerWidth <= 750){
+//   creditsAside.remove();
+// }

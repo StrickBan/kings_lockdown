@@ -6,6 +6,7 @@ let seekBar = document.querySelectorAll('.seek-bar');
 let currentTime = document.querySelectorAll('.current-time');
 let musicDuration = document.querySelectorAll('.song-duration');
 let playBtn = document.querySelectorAll('.play-btn');
+const playBtnCover = document.querySelector('.play-btn-cover')
 
 bioButton.addEventListener('click', (e)=> {
   e.preventDefault();
@@ -65,3 +66,24 @@ for (let i=0; i<music.length; i++) {
 
   setMusic()
 }
+
+const resetTracks = function() {
+  seekBar.forEach(bar => {
+    bar.value = 0;
+  })
+  music.forEach(music => {
+    music.currentTime = 0;
+    music.pause();
+  })
+  playBtn.forEach(btn => {
+    btn.classList.add('pause')
+  })
+  track.forEach(tra => {
+    tra.classList.remove('active-track')
+  })
+}
+
+playBtnCover.addEventListener('click', ()=> {
+  resetTracks();
+  playBtn[0].click();
+})

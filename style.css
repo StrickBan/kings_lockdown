@@ -127,6 +127,7 @@ aside {
 
 /* ------------- AUDIO PLAYER -----------------*/
 .audio-player {
+  margin-bottom: 0.8rem;
   background-color: #444444;
   height: 48px;
   border-radius: 48px;

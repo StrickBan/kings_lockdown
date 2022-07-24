@@ -1,5 +1,6 @@
 const bioButton = document.querySelector('#bioButton');
 const bio = document.querySelector('#bio');
+let track = document.querySelectorAll('.track')
 let music = document.querySelectorAll('.audio');
 let seekBar = document.querySelectorAll('.seek-bar');
 let currentTime = document.querySelectorAll('.current-time');
@@ -33,6 +34,7 @@ for (let i=0; i<music.length; i++) {
       music[i].pause();
     }
     playBtn[i].classList.toggle('pause');
+    track[i].classList.toggle('active-track');
   })
 
   let setMusic = () => {
@@ -48,9 +50,11 @@ for (let i=0; i<music.length; i++) {
     if(music[i].currentTime >= music[i].duration && (i+1) == music.length){
       music[i].currentTime = 0;
       playBtn[i].classList.toggle('pause');
+      track[i].classList.toggle('active-track');
     } else if (music[i].currentTime >= music[i].duration){
       music[i].currentTime = 0;
       playBtn[i].classList.toggle('pause');
+      track[i].classList.toggle('active-track');
       playBtn[i+1].click()
     }
   }, 500)

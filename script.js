@@ -1,11 +1,11 @@
 const bioButton = document.querySelector('#bioButton');
 const bio = document.querySelector('#bio');
-let track = document.querySelectorAll('.track')
+let tracks = document.querySelectorAll('.track')
 let music = document.querySelectorAll('.audio');
-let seekBar = document.querySelectorAll('.seek-bar');
-let currentTime = document.querySelectorAll('.current-time');
-let musicDuration = document.querySelectorAll('.song-duration');
-let playBtn = document.querySelectorAll('.play-btn');
+let seekBars = document.querySelectorAll('.seek-bar');
+let currentTimes = document.querySelectorAll('.current-time');
+let musicDurations = document.querySelectorAll('.song-duration');
+let playBtns = document.querySelectorAll('.play-btn');
 const playBtnCover = document.querySelector('.play-btn-cover')
 const creditsAside = document.querySelector('.credits-container')
 
@@ -29,64 +29,64 @@ let formatTime = (time) => {
 }
 
 for (let i=0; i<music.length; i++) {
-  playBtn[i].addEventListener('click', () => {
-    if(playBtn[i].className.includes('pause')){
+  playBtns[i].addEventListener('click', () => {
+    if(playBtns[i].className.includes('pause')){
       music[i].play();
     } else {
       music[i].pause();
     }
-    playBtn[i].classList.toggle('pause');
-    track[i].classList.toggle('active-track');
+    playBtns[i].classList.toggle('pause');
+    tracks[i].classList.toggle('active-track');
   })
 
   let setMusic = () => {
     setTimeout(() => {
-      seekBar[i].max = music[i].duration;
-      musicDuration[i].innerHTML = formatTime(music[i].duration);
+      seekBars[i].max = music[i].duration;
+      musicDurations[i].innerHTML = formatTime(music[i].duration);
     }, 300)
   }
 
   setInterval(() => {
-    seekBar[i].value = music[i].currentTime;
-    currentTime[i].innerHTML = formatTime(music[i].currentTime)
+    seekBars[i].value = music[i].currentTime;
+    currentTimes[i].innerHTML = formatTime(music[i].currentTime)
     if(music[i].currentTime >= music[i].duration && (i+1) == music.length){
       music[i].currentTime = 0;
-      playBtn[i].classList.toggle('pause');
-      track[i].classList.toggle('active-track');
+      playBtns[i].classList.toggle('pause');
+      tracks[i].classList.toggle('active-track');
     } else if (music[i].currentTime >= music[i].duration){
       music[i].currentTime = 0;
-      playBtn[i].classList.toggle('pause');
-      track[i].classList.toggle('active-track');
-      playBtn[i+1].click()
+      playBtns[i].classList.toggle('pause');
+      tracks[i].classList.toggle('active-track');
+      playBtns[i+1].click()
     }
   }, 500)
 
-  seekBar[i].addEventListener('change', ()=> {
-    music[i].currentTime = seekBar[i].value;
+  seekBars[i].addEventListener('change', ()=> {
+    music[i].currentTime = seekBars[i].value;
   })
 
   setMusic()
 }
 
 const resetTracks = function() {
-  seekBar.forEach(bar => {
+  seekBars.forEach(bar => {
     bar.value = 0;
   })
   music.forEach(music => {
     music.currentTime = 0;
     music.pause();
   })
-  playBtn.forEach(btn => {
+  playBtns.forEach(btn => {
     btn.classList.add('pause')
   })
-  track.forEach(tra => {
+  tracks.forEach(tra => {
     tra.classList.remove('active-track')
   })
 }
 
 playBtnCover.addEventListener('click', ()=> {
   resetTracks();
-  playBtn[0].click();
+  playBtns[0].click();
 })
 
 // if(window.innerWidth <= 750){
